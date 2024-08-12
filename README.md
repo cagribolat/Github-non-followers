@@ -41,17 +41,26 @@ This project allows you to check for GitHub users who are not following you back
     ```
 
 2. **Install dependencies:**
-
    pip install -r requirements.bat
    
+.bat file contents
+ [ @echo off
+echo Installing Python packages...
+pip install Flask
+pip install Requests
+echo Installation complete!
+pause ]
 
-3. **Run the Flask application:**
+   
+   
+
+4. **Run the Flask application:**
 
     ```bash
     python app.py
     ```
 
-4. **Access the web application:**
+5. **Access the web application:**
 
     Open your web browser and go to `http://127.0.0.1:5000`.
 
