@@ -1,6 +1,9 @@
 # GitHub Non-Followers
-
-
+</head>
+<body>
+    <img src="https://github.com/cagribolat/Github-non-followers/blob/main/Group%203.png?raw=true" alt="Centered Image">
+</body>
+</html>
 
 
 ## Description
