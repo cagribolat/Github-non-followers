@@ -78,5 +78,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any questions or feedback, you can reach me at [your-email@example.com](mailto:your-email@example.com).
+For any questions or feedback, you can reach me at [cbolat2020@gmail.com](mailto:cbolat2020@gmail.com).
 
