@@ -51,7 +51,13 @@ pip install Requests
 echo Installation complete!
 pause ]
 
-   
+   **Directory Structure Explanation**
+Github-non-followers/: The main project directory.
+app.py: The main Python file for your Flask application.
+templates/: A directory for storing HTML templates used by Flask.
+github_non_followers.html: The HTML template file located within the templates directory.
+
+
    
 
 4. **Run the Flask application:**
