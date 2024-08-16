@@ -60,31 +60,15 @@
 
     <script>
         function checkNonFollowers() {
+            // Basit bir demo mesajı göstermek
             const username = document.getElementById('username').value;
             const token = document.getElementById('token').value;
 
-            fetch('/check_non_followers', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username: username, token: token })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('API Response:', data);
-
-                if (data.error) {
-                    document.getElementById('result').innerText = `Error: ${data.error}`;
-                } else {
-                    const nonFollowers = data.non_followers || [];
-                    const nonFollowersList = nonFollowers.join(', ');
-                    document.getElementById('result').innerText = `Non-Followers (${data.count} person): ${nonFollowersList}`;
-                }
-            })
-            .catch(error => {
-                document.getElementById('result').innerText = `An error occurred: ${error}`;
-            });
+            if (username && token) {
+                document.getElementById('result').innerText = `GitHub Username: ${username}\nToken: ${token}\nNon-Followers check is not implemented.`;
+            } else {
+                document.getElementById('result').innerText = "Please enter both username and token.";
+            }
         }
 
         function openTokenPage() {
