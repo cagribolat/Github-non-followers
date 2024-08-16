@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Non-Followers</title>
+    <title>GitHub User Info</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,24 +48,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>GitHub Non-Followers</h1>
+        <h1>GitHub User Info</h1>
         <label for="username">GitHub Username:</label>
         <input type="text" id="username" placeholder="GitHub Username">
         <label for="token">Personal Access Token:</label>
         <input type="password" id="token" placeholder="Token">
-        <button onclick="checkNonFollowers()">Check Non-Followers</button>
+        <button onclick="showUserInfo()">Show User Info</button>
         <button onclick="openTokenPage()">Create a Token Here if You Don't Have One</button>
         <div class="result" id="result"></div>
     </div>
 
     <script>
-        function checkNonFollowers() {
+        function showUserInfo() {
             const username = document.getElementById('username').value;
             const token = document.getElementById('token').value;
 
             // Basit bir demo mesajı göster
             if (username && token) {
-                document.getElementById('result').innerText = `GitHub Username: ${username}\nToken: ${token}\nNon-Followers check is not implemented.`;
+                document.getElementById('result').innerText = `GitHub Username: ${username}\nToken: ${token}\nActual API call cannot be performed on GitHub Pages.`;
             } else {
                 document.getElementById('result').innerText = "Please enter both username and token.";
             }
