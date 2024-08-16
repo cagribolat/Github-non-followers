@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub_Non_Followers</title>
+    <title>GitHub Non-Followers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,7 +48,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>GitHub_Non_Followers</h1>
+        <h1>GitHub Non-Followers</h1>
         <label for="username">GitHub Username:</label>
         <input type="text" id="username" placeholder="GitHub Username">
         <label for="token">Personal Access Token:</label>
@@ -60,10 +60,10 @@
 
     <script>
         function checkNonFollowers() {
-            // Basit bir demo mesajı göstermek
             const username = document.getElementById('username').value;
             const token = document.getElementById('token').value;
 
+            // Basit bir demo mesajı göster
             if (username && token) {
                 document.getElementById('result').innerText = `GitHub Username: ${username}\nToken: ${token}\nNon-Followers check is not implemented.`;
             } else {
