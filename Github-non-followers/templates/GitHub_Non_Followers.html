@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub User Info</title>
+    <title>GitHub Non Followers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,32 +46,48 @@
 </head>
 <body>
     <div class="container">
-        <h1>GitHub User Info</h1>
+        <h1>GitHub Non Followers</h1>
         <label for="username">GitHub Username:</label>
         <input type="text" id="username" placeholder="GitHub Username">
         <label for="token">Personal Access Token:</label>
         <input type="password" id="token" placeholder="Token">
-        <button onclick="showUserInfo()">Show User Info</button>
+        <button onclick="checkNonFollowers()">Check Non-Followers</button>
         <button onclick="openTokenPage()">Create a Token Here if You Don't Have One</button>
-        <div class="result" id="result"></div>
+        <div class="result" id="result">Error: Username and token are required</div>
     </div>
 
     <script>
-        function showUserInfo() {
+        function checkNonFollowers() {
             const username = document.getElementById('username').value;
             const token = document.getElementById('token').value;
 
-            // Basit bir demo mesajı göster
-            if (username && token) {
-                document.getElementById('result').innerText = `GitHub Username: ${username}\nToken: ${token}\nActual API call cannot be performed on GitHub Pages.`;
-            } else {
-                document.getElementById('result').innerText = "Please enter both username and token.";
-            }
+            fetch('/check_non_followers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username, token: token })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('API Response:', data);
+
+                if (data.error) {
+                    document.getElementById('result').innerText = `Error: ${data.error}`;
+                } else {
+                    const nonFollowers = data.non_followers || [];
+                    const nonFollowersList = nonFollowers.join(', ');
+                    document.getElementById('result').innerText = `Non-Followers (${data.count} person): ${nonFollowersList}`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('result').innerText = `An error occurred: ${error}`;
+            });
         }
 
         function openTokenPage() {
             window.open('https://github.com/settings/tokens', '_blank');
         }
     </script>
-</body>
-</html>
+
+</body></html>
