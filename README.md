@@ -90,12 +90,4 @@ github_non_followers.html: The HTML template file located within the templates d
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
 
-## License
-
-
-
-
-## Contact
-
-For any questions or feedback, you can reach me at [cbolat2020@gmail.com](mailto:cbolat2020@gmail.com).
 
